@@ -1,38 +1,208 @@
-.App {
-  text-align: center;
+*{
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+/* HEADER */
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.Header {
+  height: 70px;
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
+  margin: 0px 10px;
+  align-items: center;
+}
+
+.Header button {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+}
+
+
+
+/* FİLTER BUTTON */
+
+.filter-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+.filter-wrapper button {
+  margin: 0px 3px;
+  padding: 5px 10px;
+  border: 1px solid rgb(56, 55, 55);
+  background-color: #fff;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.filter-wrapper button.active{
+  background-color: #ff3232;
+  color: #fff;
+}
+
+
+
+
+
+/* MOVİE */
+
+.card-wrapper {
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  flex-wrap: wrap;
+  overflow: hidden;
+}
+
+.card {
+  margin: 10px;
+  overflow: hidden;
+  border-radius: 5px;
+  width: 370px;
+}
+
+.card .image {
+  position: relative;
+}
+
+.card .image img {
+  width: 100%;
+  transition: 0.3s;
+  border-radius: 5px;
+}
+.card .image img:hover {
+  opacity: 0.9;
+}
+
+.card .image .content {
+  position: absolute;
+  bottom: -50px;
+  transition: 0.4s ease;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  font-weight: 500;
+  left: 0px;
+  right: 0px;
+}
+
+.card .image:hover > .content {
+  bottom: 0px;
+  background-color: #fff;
+  color: #000 !important;
+  opacity: 0.7;
+}
+
+
+
+
+
+
+
+/* DARK MODE */
+
+.dark {
+  background-color: black;
   color: white;
+  min-height: 100vh;
+
 }
 
-.App-link {
-  color: #61dafb;
+/* DARK MODE BUTTON */
+
+.themeMode{
+  display: flex;
+  align-items: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.dl-icons{
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
+span {
+  font-size: 30px;
+}
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 14px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slide {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slide:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .slide {
+  background-color: #ff3232;
+}
+
+input:focus + .slide {
+  box-shadow: 0 0 1px #ff3232;
+}
+
+input:checked + .slide:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* .roundeded .slides  */
+.slide.rounded { 
+ border-radius: 34px;  } 
+
+ .slide.rounded:before {
+  border-radius: 50%;
+}
+.switch-container {
+  padding: 10px;
+} 
+
