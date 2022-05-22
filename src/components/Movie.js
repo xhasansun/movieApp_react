@@ -9,6 +9,7 @@ function Movie() {
     const [filtered, setFiltered] = useState([]);
     const [activeGenre, setActiveGenre] = useState(0);
 
+    
     console.log(process.env);
 
     const getMovies = async () => {
