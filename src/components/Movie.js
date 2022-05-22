@@ -9,8 +9,10 @@ function Movie() {
     const [filtered, setFiltered] = useState([]);
     const [activeGenre, setActiveGenre] = useState(0);
 
+    console.log(process.env);
+
     const getMovies = async () => {
-        const res = await axios("https://api.themoviedb.org/3/movie/popular?api_key=76c45d0468da2c2cee539dafa8a9960a&language=en-US&page=1")
+        const res = await axios(`https://api.themoviedb.org/3/movie/popular?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&page=1`)
         setMovies(res.data.results)
         setFiltered(res.data.results)
     }
